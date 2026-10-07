@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | NAWYA Welfare and Charitable Foundation</title>
+
+<style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#01B673;
+    --primary-dark:#008f5a;
+    --dark:#12352a;
+    --text:#263b33;
+    --muted:#6c7b75;
+    --light:#f4faf7;
+    --white:#ffffff;
+    --border:#dce9e3;
+    --shadow:0 15px 45px rgba(18,53,42,.10);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.site-header{
+    width:100%;
+    background:#fff;
+    border-bottom:1px solid #edf2ef;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.header-inner{
+    width:min(1200px,92%);
+    margin:auto;
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.logo-text{
+    font-size:18px;
+    font-weight:800;
+    line-height:1.2;
+    color:var(--dark);
+}
+
+.logo-text span{
+    color:var(--primary);
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-menu a{
+    font-size:14px;
+    font-weight:600;
+    color:#31463d;
+    transition:.25s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active{
+    color:var(--primary);
+}
+
+.nav-donate{
+    background:var(--primary)!important;
+    color:#fff!important;
+    padding:11px 19px;
+    border-radius:8px;
+}
+
+.nav-donate:hover{
+    background:var(--primary-dark)!important;
+}
+
+.menu-toggle{
+    display:none;
+    border:0;
+    background:none;
+    font-size:27px;
+    cursor:pointer;
+    color:var(--dark);
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:80px 0;
+}
+
+.section.soft{
+    background:var(--light);
+}
+
+.section-heading{
+    max-width:720px;
+    margin:0 auto 48px;
+    text-align:center;
+}
+
+.section-heading .eyebrow{
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.section-heading h2{
+    color:var(--dark);
+    font-size:40px;
+    line-height:1.2;
+    margin-bottom:14px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.donate-hero{
+    padding:75px 0;
+    background:linear-gradient(135deg,#effcf7 0%,#ffffff 70%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 470px;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-eyebrow{
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.hero-content h1{
+    color:var(--dark);
+    font-size:56px;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero-content h1 span{
+    display:block;
+    color:var(--primary);
+}
+
+.hero-description{
+    max-width:650px;
+    color:var(--muted);
+    font-size:18px;
+    margin-bottom:28px;
+}
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.badge{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:9px 14px;
+    font-size:13px;
+    font-weight:700;
+    color:#40524b;
+}
+
+.badge strong{
+    color:var(--primary);
+}
+
+/* =========================================================
+   DONATION CARD
+========================================================= */
+.donation-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.donation-card h2{
+    color:var(--dark);
+    font-size:27px;
+    margin-bottom:20px;
+}
+
+.frequency-toggle{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:5px;
+    padding:5px;
+    background:#edf5f1;
+    border-radius:12px;
+    margin-bottom:24px;
+}
+
+.frequency-toggle button{
+    border:0;
+    background:transparent;
+    color:var(--muted);
+    padding:12px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.frequency-toggle button.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+.amount-title{
+    font-size:14px;
+    font-weight:800;
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.amount-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.amount-btn{
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--dark);
+    border-radius:10px;
+    padding:14px 10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.amount-btn:hover,
+.amount-btn.active{
+    border-color:var(--primary);
+    background:#eafff6;
+    color:var(--primary-dark);
+}
+
+.custom-amount{
+    display:none;
+    margin-bottom:15px;
+}
+
+.custom-amount.show{
+    display:block;
+}
+
+.custom-amount input{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:13px;
+    outline:none;
+    font-size:15px;
+}
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:800;
+    color:var(--dark);
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:13px 14px;
+    outline:none;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--primary);
+}
+
+.phone-wrap{
+    display:flex;
+}
+
+.phone-code{
+    width:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f3f7f5;
+    border:1px solid var(--border);
+    border-right:0;
+    border-radius:9px 0 0 9px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.phone-wrap input{
+    border-radius:0 9px 9px 0;
+}
+
+.donate-submit{
+    width:100%;
+    border:0;
+    background:var(--primary);
+    color:#fff;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s;
+    margin-top:5px;
+}
+
+.donate-submit:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+
+.secure-text{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:11px;
+}
+
+.portal-link{
+    text-align:center;
+    font-size:13px;
+    margin-top:16px;
+    color:var(--muted);
+}
+
+.portal-link a{
+    color:var(--primary-dark);
+    font-weight:800;
+}
+
+.portal-link a:hover{
+    text-decoration:underline;
+}
+
+/* =========================================================
+   TRANSPARENCY
+========================================================= */
+.transparency-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    max-width:920px;
+    margin:auto;
+}
+
+.transparency-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:35px 25px;
+    text-align:center;
+}
+
+.transparency-card .percentage{
+    color:var(--primary);
+    font-size:50px;
+    font-weight:900;
+    line-height:1;
+    margin-bottom:12px;
+}
+
+.transparency-card h3{
+    color:var(--dark);
+    margin-bottom:7px;
+}
+
+.transparency-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================================================
+   WHY DONATE
+========================================================= */
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+    background:#fff;
+    transition:.25s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.feature-icon{
+    width:52px;
+    height:52px;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eafff6;
+    color:var(--primary);
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.feature-card h3{
+    color:var(--dark);
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.feature-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+.steps-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.step{
+    text-align:center;
+    padding:25px;
+}
+
+.step-number{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    font-size:21px;
+    font-weight:900;
+}
+
+.step h3{
+    color:var(--dark);
+    margin-bottom:8px;
+}
+
+.step p{
+    color:var(--muted);
+}
+
+/* =========================================================
+   IMPACT
+========================================================= */
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.impact-box{
+    text-align:center;
+    padding:32px 15px;
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:18px;
+}
+
+.impact-box strong{
+    display:block;
+    color:var(--primary);
+    font-size:42px;
+    line-height:1;
+    margin-bottom:10px;
+}
+
+.impact-box span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:transparent;
+    padding:20px 5px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    color:var(--dark);
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.faq-plus{
+    color:var(--primary);
+    font-size:25px;
+    transition:.2s;
+}
+
+.faq-answer{
+    display:none;
+    color:var(--muted);
+    font-size:14px;
+    padding:0 5px 20px;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+.faq-item.open .faq-plus{
+    transform:rotate(45deg);
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+.final-cta{
+    background:var(--primary);
+    color:#fff;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.final-cta h2{
+    font-size:40px;
+    margin-bottom:13px;
+}
+
+.final-cta p{
+    max-width:700px;
+    margin:0 auto 25px;
+    opacity:.94;
+}
+
+.cta-button{
+    display:inline-block;
+    background:#fff;
+    color:var(--primary-dark);
+    padding:14px 28px;
+    border-radius:9px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.cta-portal{
+    margin-top:17px;
+    font-size:14px;
+}
+
+.cta-portal a{
+    text-decoration:underline;
+    font-weight:800;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.site-footer{
+    background:#102c22;
+    color:#dce9e3;
+    padding:65px 0 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:45px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.footer-logo img{
+    width:62px;
+    height:62px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.footer-logo strong{
+    color:#fff;
+    font-size:18px;
+}
+
+.footer-about p{
+    color:#aebfb8;
+    font-size:14px;
+    max-width:470px;
+    line-height:1.8;
+}
+
+.footer-contact{
+    margin-top:18px;
+}
+
+.footer-contact div{
+    margin-bottom:8px;
+    color:#c4d1cc;
+    font-size:14px;
+}
+
+.footer-column h3{
+    color:#fff;
+    font-size:16px;
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#aebfb8;
+    font-size:14px;
+    margin-bottom:10px;
+    transition:.2s;
+}
+
+.footer-column a:hover{
+    color:var(--primary);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#91a49c;
+    font-size:13px;
+}
+
+.footer-bottom-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-bottom-links a:hover{
+    color:var(--primary);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media(max-width:1050px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .donation-card{
+        max-width:600px;
+        width:100%;
+        margin:auto;
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-about{
+        grid-column:1/-1;
+    }
+}
+
+@media(max-width:800px){
+
+    .nav-menu{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:#fff;
+        border-bottom:1px solid var(--border);
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .nav-menu.open{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero-content h1{
+        font-size:43px;
+    }
+
+    .transparency-grid,
+    .steps-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .section{
+        padding:55px 0;
+    }
+
+    .donate-hero{
+        padding:50px 0;
+    }
+
+    .hero-content h1{
+        font-size:37px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .section-heading h2{
+        font-size:31px;
+    }
+
+    .feature-grid,
+    .impact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-about{
+        grid-column:auto;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+    .donation-card{
+        padding:21px;
+    }
+
+    .badges{
+        gap:7px;
+    }
+
+    .badge{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="/" class="logo-area">
+            <img src="assets/images/fdlog.jpg"
+                 alt="NAWYA Welfare and Charitable Foundation">
+
+            <div class="logo-text">
+                <span>NAWYA</span><br>
+                Welfare Foundation
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="/courses/">Internships</a>
+            <a href="/register/">Student Registration</a>
+            <a href="/student/">Student Portal</a>
+            <a href="/donor/">Donor Portal</a>
+            <a href="/donate/" class="nav-donate active">Donate</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =======================================================
+     DONATE HERO
+======================================================= -->
+<section class="donate-hero" id="top">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                Support NAWYA Welfare
+            </div>
+
+            <h1>
+                Make a donation
+                <span>Fund a student.<br>
+                Grow a forest.<br>
+                Change a village.</span>
+            </h1>
+
+            <p class="hero-description">
+                Every donation trains students, supports farmers, and
+                protects forests across rural Bihar — with full 80G tax
+                exemption and a certificate delivered in minutes.
+            </p>
+
+            <div class="badges">
+
+                <div class="badge">
+                    <strong>Recognised</strong> by the Government of India
+                </div>
+
+                <div class="badge">
+                    <strong>80G</strong> Tax exempt
+                </div>
+
+                <div class="badge">
+                    <strong>12A</strong> Income Tax
+                </div>
+
+                <div class="badge">
+                    <strong>NITI Aayog</strong> Registered
+                </div>
+
+                <div class="badge">
+                    <strong>ISO 9001</strong> Certified
+                </div>
+
+                <div class="badge">
+                    <strong>MSME</strong> Udyam
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DONATION FORM -->
+        <div class="donation-card">
+
+            <h2>Make your contribution</h2>
+
+            <div class="frequency-toggle">
+
+                <button
+                    type="button"
+                    class="active"
+                    data-frequency="one-time">
+                    One-time
+                </button>
+
+                <button
+                    type="button"
+                    data-frequency="monthly">
+                    Monthly
+                </button>
+
+            </div>
+
+            <div class="amount-title">
+                Choose an amount
+            </div>
+
+            <div class="amount-grid">
+
+                <button
+                    type="button"
+                    class="amount-btn"
+                    data-amount="500">
+                    ₹500
+                    <small>Funds one week of training for a student</small>
+                </button>
+
+                <button
+                    type="button"
+                    class="amount-btn active"
+                    data-amount="1500">
+                    ₹1,500
+                    <small>Sponsors a student through a full internship cycle</small>
+                </button>
+
+                <button
+                    type="button"
+                    class="amount-btn"
+                    data-amount="5000">
+                    ₹5,000
+                    <small>Funds one student's month-long research stipend</small>
+                </button>
+
+                <button
+                    type="button"
+                    class="amount-btn"
+                    data-amount="custom">
+                    Custom amount
+                </button>
+
+            </div>
+
+            <div class="custom-amount" id="customAmountBox">
+
+                <input
+                    type="number"
+                    id="customAmount"
+                    min="1"
+                    placeholder="₹ Enter custom amount">
+
+            </div>
+
+
+            <form id="donationForm">
+
+                <div class="form-group">
+                    <label>Full name *</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="form-group">
+
+                    <label>Phone *</label>
+
+                    <div class="phone-wrap">
+
+                        <div class="phone-code">
+                            +91
+                        </div>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>PAN (optional — required for 80G receipt)</label>
+                    <input
+                        type="text"
+                        id="pan"
+                        placeholder="Enter PAN number">
+                </div>
+
+                <div class="form-group">
+                    <label>Address (optional)</label>
+                    <textarea
+                        id="address"
+                        rows="3"
+                        placeholder="Enter your address"></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="donate-submit"
+                    id="donateSubmit">
+                    Donate Now — ₹1,500
+                </button>
+
+                <div class="secure-text">
+                    Secure payment by Razorpay. 100% tax-deductible under Section 80G.
+                </div>
+
+            </form>
+
+            <div class="portal-link">
+                Already a donor?
+                <a href="/donor/">Sign in to Donor Portal</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     TRANSPARENCY
+======================================================= -->
+<section class="section soft">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Full transparency
+            </div>
+
+            <h2>Where your money goes</h2>
+
+            <p>
+                70% of every rupee hits the field. Here's the exact breakdown.
+            </p>
+
+        </div>
+
+
+        <div class="transparency-grid">
+
+            <div class="transparency-card">
+
+                <div class="percentage">70%</div>
+
+                <h3>Programs</h3>
+
+                <p>
+                    Training camps, stipends, field research, materials.
+                </p>
+
+            </div>
+
+
+            <div class="transparency-card">
+
+                <div class="percentage">20%</div>
+
+                <h3>Operations</h3>
+
+                <p>
+                    Staff, travel, coordination across 40+ villages.
+                </p>
+
+            </div>
+
+
+            <div class="transparency-card">
+
+                <div class="percentage">10%</div>
+
+                <h3>Growth</h3>
+
+                <p>
+                    New programs, outreach, and technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     WHY DONATE
+======================================================= -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Why donate here
+            </div>
+
+            <h2>Built for donors who want clarity</h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">✓</div>
+
+                <h3>Instant 80G receipt</h3>
+
+                <p>
+                    Your tax-deductible certificate is generated immediately
+                    and can be made available for your records.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">✓</div>
+
+                <h3>Verified & registered</h3>
+
+                <p>
+                    12A, 80G, NITI Aayog, ISO and MSME registrations provide
+                    donors with greater transparency.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">₹</div>
+
+                <h3>Track every rupee</h3>
+
+                <p>
+                    Your donor portal can show contributions, certificates,
+                    and program updates.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">♥</div>
+
+                <h3>Monthly or one-time</h3>
+
+                <p>
+                    Choose a one-time contribution or recurring monthly support
+                    according to your preference.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     THREE STEPS
+======================================================= -->
+<section class="section soft">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Three steps
+            </div>
+
+            <h2>How giving works</h2>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Pick an amount</h3>
+
+                <p>
+                    One-time or monthly. From ₹100 up.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Pay securely</h3>
+
+                <p>
+                    Razorpay checkout can support UPI, card, netbanking
+                    and wallet payments once the live gateway is connected.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Get your certificate</h3>
+
+                <p>
+                    Receive your donation documentation and access your
+                    donor records.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     IMPACT
+======================================================= -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>What your donation has already built</h2>
+
+        </div>
+
+
+        <div class="impact-grid">
+
+            <div class="impact-box">
+                <strong>5,000+</strong>
+                <span>Students trained</span>
+            </div>
+
+            <div class="impact-box">
+                <strong>100K+</strong>
+                <span>Trees planted</span>
+            </div>
+
+            <div class="impact-box">
+                <strong>200+</strong>
+                <span>Community projects</span>
+            </div>
+
+            <div class="impact-box">
+                <strong>50+</strong>
+                <span>Research programs</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FAQ
+======================================================= -->
+<section class="section soft">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">
+                Common questions
+            </div>
+
+            <h2>Questions, answered.</h2>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>Is my donation tax-deductible?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Eligible donations can qualify for tax benefits subject
+                    to applicable Section 80G rules and the foundation's
+                    registration status.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>When do I get my certificate?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Donation receipt and certificate processing depends on
+                    the live donation/payment system connected to this page.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>Can I cancel a recurring donation?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Monthly donation cancellation can be managed through
+                    the recurring payment system once the live gateway
+                    integration is enabled.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>How do you use the funds?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Donations support training, education, community projects,
+                    field activities, research and related charitable work.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>Is my payment secure?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Once Razorpay or another recognised payment gateway is
+                    connected, payment processing takes place through the
+                    gateway's secure checkout system.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <span class="faq-plus">+</span>
+                </button>
+
+                <div class="faq-answer">
+                    The live payment gateway can support available methods
+                    such as UPI, cards, netbanking and wallets.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL CTA
+======================================================= -->
+<section class="final-cta">
+
+    <div class="container">
+
+        <h2>Ready to back real research?</h2>
+
+        <p>
+            Join our community of donors funding the next generation
+            of researchers, students and community initiatives across Bihar.
+        </p>
+
+        <a href="#top" class="cta-button">
+            Donate Now
+        </a>
+
+        <div class="cta-portal">
+            Already a donor?
+            <a href="/donor/">Sign in to your portal →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+
+                    <img
+                        src="assets/images/fdlog.jpg"
+                        alt="NAWYA Welfare and Charitable Foundation">
+
+                    <strong>
+                        NAWYA Welfare and Charitable Foundation
+                    </strong>
+
+                </div>
+
+                <p>
+                    Empowering students, supporting communities,
+                    protecting biodiversity and creating sustainable
+                    opportunities through education and social development.
+                </p>
+
+                <div class="footer-contact">
+
+                    <div>
+                        ✉ manishkrteacher@gmail.com
+                    </div>
+
+                    <div>
+                        ☎ +91 62042 05339
+                    </div>
+
+                    <div>
+                        📍 India
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="/about/">About Us</a>
+                <a href="/courses/">Our Work</a>
+                <a href="/impact/">Impact</a>
+                <a href="/register/">Student Registration</a>
+                <a href="/verify/">Verify Certificate</a>
+                <a href="/contact/">Get Involved</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Research Areas</h3>
+
+                <a href="/courses/">Education & Training</a>
+                <a href="/courses/">Forest Conservation</a>
+                <a href="/courses/">Community Development</a>
+                <a href="/courses/">Research Programs</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 NAWYA WELFARE AND CHARITABLE FOUNDATION.
+                All rights reserved.
+            </div>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if(menuToggle){
+
+        menuToggle.addEventListener("click", function(){
+
+            navMenu.classList.toggle("open");
+
+            if(navMenu.classList.contains("open")){
+                menuToggle.textContent = "✕";
+            }else{
+                menuToggle.textContent = "☰";
+            }
+
+        });
+
+    }
+
+
+    /* =========================
+       DONATION AMOUNT
+    ========================= */
+
+    const amountButtons =
+        document.querySelectorAll(".amount-btn");
+
+    const customAmountBox =
+        document.getElementById("customAmountBox");
+
+    const customAmount =
+        document.getElementById("customAmount");
+
+    const donateSubmit =
+        document.getElementById("donateSubmit");
+
+    let selectedAmount = 1500;
+
+    function updateDonationButton(){
+
+        let amount = selectedAmount;
+
+        if(selectedAmount === "custom"){
+            amount = Number(customAmount.value || 0);
+        }
+
+        if(amount > 0){
+
+            donateSubmit.textContent =
+                "Donate Now — ₹" +
+                Number(amount).toLocaleString("en-IN");
+
+        }else{
+
+            donateSubmit.textContent =
+                "Donate Now";
+
+        }
+
+    }
+
+
+    amountButtons.forEach(function(button){
+
+        button.addEventListener("click", function(){
+
+            amountButtons.forEach(function(item){
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            const value =
+                button.getAttribute("data-amount");
+
+            if(value === "custom"){
+
+                selectedAmount = "custom";
+
+                customAmountBox.classList.add("show");
+
+                customAmount.focus();
+
+            }else{
+
+                selectedAmount = Number(value);
+
+                customAmountBox.classList.remove("show");
+
+            }
+
+            updateDonationButton();
+
+        });
+
+    });
+
+
+    customAmount.addEventListener("input", function(){
+        updateDonationButton();
+    });
+
+
+    /* =========================
+       FREQUENCY
+    ========================= */
+
+    const frequencyButtons =
+        document.querySelectorAll(
+            ".frequency-toggle button"
+        );
+
+    let frequency = "one-time";
+
+    frequencyButtons.forEach(function(button){
+
+        button.addEventListener("click", function(){
+
+            frequencyButtons.forEach(function(item){
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            frequency =
+                button.getAttribute("data-frequency");
+
+        });
+
+    });
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    const faqItems =
+        document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function(item){
+
+        const question =
+            item.querySelector(".faq-question");
+
+        question.addEventListener("click", function(){
+
+            faqItems.forEach(function(other){
+
+                if(other !== item){
+                    other.classList.remove("open");
+                }
+
+            });
+
+            item.classList.toggle("open");
+
+        });
+
+    });
+
+
+    /* =========================
+       DONATION FORM
+    ========================= */
+
+    const donationForm =
+        document.getElementById("donationForm");
+
+    donationForm.addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        let amount = selectedAmount;
+
+        if(selectedAmount === "custom"){
+            amount = Number(customAmount.value || 0);
+        }
+
+        if(!amount || amount <= 0){
+
+            alert("Please select a valid donation amount.");
+
+            return;
+        }
+
+
+        const name =
+            document.getElementById("fullName").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const pan =
+            document.getElementById("pan").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+
+        if(!name || !email || !phone){
+
+            alert(
+                "Please fill all required fields."
+            );
+
+            return;
+        }
+
+
+        const donationId =
+            "NWF-" +
+            Math.floor(
+                10000000 +
+                Math.random() * 90000000
+            );
+
+
+        const donationData = {
+
+            donationId: donationId,
+
+            name: name,
+
+            email: email,
+
+            phone: phone,
+
+            pan: pan,
+
+            address: address,
+
+            amount: amount,
+
+            frequency: frequency,
+
+            date: new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            "nawyaDonation",
+            JSON.stringify(donationData)
+        );
+
+
+        alert(
+            "Thank you, " +
+            name +
+            "!\n\n" +
+            "Donation Request ID: " +
+            donationId +
+            "\n" +
+            "Amount: ₹" +
+            Number(amount).toLocaleString("en-IN") +
+            "\n" +
+            "Type: " +
+            frequency +
+            "\n\n" +
+            "Your donation details have been recorded."
+        );
+
+        /*
+          IMPORTANT:
+
+          This is frontend functionality only.
+
+          Real Razorpay payment ke liye Razorpay credentials,
+          server/backend and payment verification integration
+          required hogi.
+        */
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
